@@ -1,5 +1,7 @@
 package team2.roommates.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team2.roommates.models.Admin;
@@ -22,4 +24,8 @@ public class AdminService {
     public void deleteAdmin(int adminId) {
         adminRepository.deleteById(adminId);
     }
+
+	public List<Admin> findAllAdmins() {
+		return (List<Admin>) adminRepository.findAll();
+	}
 }

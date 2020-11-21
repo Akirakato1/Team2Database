@@ -9,8 +9,19 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String password; 
+    private String email;
+    
+    
+    public String getPassword() {
+		return password;
+	}
 
-    public int getId() {
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getId() {
         return id;
     }
 
@@ -34,5 +45,5 @@ public class Admin {
         this.email = email;
     }
 
-    private String email;
+    
 }

@@ -7,8 +7,6 @@ import team2.roommates.services.ResidentService;
 
 import java.util.List;
 
-
-
 @RestController
 @CrossOrigin(origins = "*")
 public class ResidentController {

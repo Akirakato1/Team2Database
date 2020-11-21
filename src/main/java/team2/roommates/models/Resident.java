@@ -9,11 +9,13 @@ public class Resident {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String password;
     private String address;
     private String email;
     private int adminId;
     private int calendarId;
     private int groupId;
+    
 
     public Resident(){}
 
@@ -25,7 +27,15 @@ public class Resident {
         this.id = id;
     }
 
-    public String getName() {
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
         return name;
     }
 
