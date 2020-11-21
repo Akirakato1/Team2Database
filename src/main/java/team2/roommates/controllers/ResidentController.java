@@ -7,12 +7,19 @@ import team2.roommates.services.ResidentService;
 
 import java.util.List;
 
+
+
 @RestController
 @CrossOrigin(origins = "*")
 public class ResidentController {
     @Autowired
     ResidentService residentService;
 
+    @GetMapping("/api/residents")
+    public List<Resident> findAllResidents(){
+    	return residentService.findAllResidents();
+    }
+   
     @PostMapping("/api/residents")
     public Resident createResident(
             @RequestBody Resident resident

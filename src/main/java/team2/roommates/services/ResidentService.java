@@ -35,4 +35,8 @@ public class ResidentService {
     public List<Resident> getResidentsByGroupId(int groupId) {
         return residentRepository.getResidentsByGroupId(groupId);
     }
+
+	public List<Resident> findAllResidents() {
+		return (List<Resident>)residentRepository.findAll();
+	}
 }
