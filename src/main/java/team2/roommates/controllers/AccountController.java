@@ -18,6 +18,13 @@ public class AccountController {
     	return accountService.findAllAccounts();
     }
     
+    @GetMapping("/api/accounts/{username}/{password}")
+    public Account findAccountByUsernamePassword(
+    		@PathVariable String username,
+    		@PathVariable String password){
+    	return accountService.findAccountByUsernamePassword(username,password);
+    }
+    
     @PostMapping("/api/accounts")
     public Account createAccount(
             @RequestBody Account account

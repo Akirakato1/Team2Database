@@ -28,4 +28,14 @@ public class AccountService {
 	public List<Account> findAllAccounts() {
 		return (List<Account>) accountRepository.findAll();
 	}
+
+	public Account findAccountByUsernamePassword(String username, String password) {
+		List<Account> al=accountRepository.findAccountByUsernamePassword(username,password);
+		if(al.size()==0) {
+			return null;
+		}
+		else {
+			return al.get(0);
+		}
+	}
 }
