@@ -3,6 +3,8 @@ package team2.roommates.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team2.roommates.models.Group;
+import team2.roommates.models.RSVP;
+import team2.roommates.repositories.RSVPRepository;
 import team2.roommates.services.GroupService;
 
 import java.util.List;
@@ -12,6 +14,8 @@ import java.util.List;
 public class GroupController {
     @Autowired
     GroupService groupService;
+    @Autowired
+    RSVPRepository rsvpRepository;
 
     @PostMapping("/api/groups")
     public Group createGroup(
@@ -32,6 +36,8 @@ public class GroupController {
             @PathVariable int groupId
     ) {
         groupService.deleteGroup(groupId);
+        List<RSVP> rsvps = rsvpRepository.getRSVPSByApartmentId(groupId);
+        rsvpRepository.deleteAll(rsvps);
     }
 
     @GetMapping("/api/calendars/{calendarId}/groups")
