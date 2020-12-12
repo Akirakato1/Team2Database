@@ -27,4 +27,12 @@ public class FacilityService {
     public List<Facility> getFacilitiesByAdminId(int adminId) {
         return facilityRepository.getFacilitiesByAdminId(adminId);
     }
+
+    public List<Facility> getAllFacilities() {
+        return (List<Facility>) facilityRepository.findAll();
+    }
+
+    public Facility getFacilityById(int id) {
+        return facilityRepository.findById(id).get();
+    }
 }

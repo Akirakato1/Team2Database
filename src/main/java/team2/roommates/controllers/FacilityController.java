@@ -40,4 +40,10 @@ public class FacilityController {
     ) {
         return facilityService.getFacilitiesByAdminId(adminId);
     }
+
+    @GetMapping("/api/facilities")
+    public List<Facility> getAllFacilities()
+    {
+        return facilityService.getAllFacilities();
+    }
 }
