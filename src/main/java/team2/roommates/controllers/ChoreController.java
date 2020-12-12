@@ -34,10 +34,17 @@ public class ChoreController {
         choreService.deleteChore(choreId);
     }
 
-    @GetMapping("/api/groups/{groupId}/chores")
+    @GetMapping("/api/apartments/{groupId}/chores")
     public List<Chore> getChoresByGroupId(
             @PathVariable int groupId
     ) {
         return choreService.getChoresByGroupId(groupId);
+    }
+
+    @GetMapping("/api/chores/{id}")
+    public Chore getChoreById(
+            @PathVariable int id
+    ) {
+        return choreService.getChoreById(id);
     }
 }
