@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import team2.roommates.models.Group;
 import team2.roommates.services.GroupService;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 public class GroupController {
@@ -37,5 +39,19 @@ public class GroupController {
             @PathVariable int calendarId
     ) {
         return groupService.getGroupByCalendarId(calendarId);
+    }
+
+    @GetMapping("/api/apartments/")
+    public List<Group> getAllGroups()
+    {
+        return groupService.getAllGroups();
+    }
+
+    @GetMapping("/api/apartments/{apartmentId}")
+    public Group getGroupById(
+            @PathVariable int apartmentId
+    )
+    {
+        return groupService.getGroupById(apartmentId);
     }
 }
