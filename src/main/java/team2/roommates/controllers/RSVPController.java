@@ -10,6 +10,7 @@ import team2.roommates.services.RSVPService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class RSVPController {
     @Autowired
     RSVPService service;
