@@ -8,11 +8,10 @@ public class Facility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String description;
-    private String availability;
+    private String type;
+    private String status;
+    private String notes;
     private int adminId;
-
-    public Facility() {}
 
     public int getId() {
         return id;
@@ -22,20 +21,28 @@ public class Facility {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getType() {
+        return type;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getAvailability() {
-        return availability;
+    public String getStatus() {
+        return status;
     }
 
-    public void setAvailability(String availability) {
-        this.availability = availability;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     public int getAdminId() {
