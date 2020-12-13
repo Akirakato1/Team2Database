@@ -10,7 +10,8 @@ public class Apartment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String address;
-
+    private int adminId;
+    
     public Apartment() {}
 
     public int getId() {
@@ -28,4 +29,12 @@ public class Apartment {
     public void setAddress(String address) {
         this.address = address;
     }
+
+	public int getAdminId() {
+		return adminId;
+	}
+
+	public void setAdminId(int adminId) {
+		this.adminId = adminId;
+	}
 }
