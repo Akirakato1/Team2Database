@@ -24,7 +24,7 @@ public class EventService {
         userEventRepository.deleteById(userEventId);
     }
 
-    public List<Event> getUserEventsByCalendarId(int calendarId) {
-        return userEventRepository.getUserEventsByCalendarId(calendarId);
-    }
+    public Event getEventById(int id) { return userEventRepository.findById(id).get(); }
+
+    public List<Event> getAllEvents() { return (List<Event>) userEventRepository.findAll(); }
 }

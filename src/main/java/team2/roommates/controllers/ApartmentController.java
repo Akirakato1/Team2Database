@@ -40,7 +40,7 @@ public class ApartmentController {
         rsvpRepository.deleteAll(rsvps);
     }
 
-    @GetMapping("/api/apartments/")
+    @GetMapping("/api/apartments")
     public List<Apartment> getAllApartments()
     {
         return apartmentService.getAllApartments();
