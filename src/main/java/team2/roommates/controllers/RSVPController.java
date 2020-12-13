@@ -14,7 +14,7 @@ public class RSVPController {
     @Autowired
     RSVPService service;
 
-    @PutMapping("/api/rsvp/{eventId}/{apartmentId}")
+    @PostMapping("/api/rsvp/{eventId}/{apartmentId}")
     public RSVP createRSVP(
             @PathVariable int eventId,
             @PathVariable int apartmentId
