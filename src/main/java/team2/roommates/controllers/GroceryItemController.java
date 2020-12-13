@@ -13,35 +13,35 @@ public class GroceryItemController {
     @Autowired
     GroceryItemService service;
 
-    @PostMapping("/api/groceryItems")
+    @PostMapping("/api/groceries")
     public GroceryItem createGroceryItem(
             @RequestBody GroceryItem groceryItem
     ) {
         return service.createGroceryItem(groceryItem);
     }
 
-    @PutMapping("/api/groceryItems")
+    @PutMapping("/api/groceries")
     public GroceryItem updateGroceryItem(
             @RequestBody GroceryItem groceryItem
     ) {
         return service.updateGroceryItem(groceryItem);
     }
 
-    @DeleteMapping("/api/groceryItems/{id}")
+    @DeleteMapping("/api/groceries/{id}")
     public void deleteGroceryItem(
             @PathVariable int id
     ) {
         service.deleteGroceryItem(id);
     }
 
-    @GetMapping("/api/groceryItems/{id}")
+    @GetMapping("/api/groceries/{id}")
     public GroceryItem getGroceryItemById(
             @PathVariable int id
     ) {
         return service.getGroceryItemById(id);
     }
 
-    @GetMapping("/api/apartments/{id}/groceryItems")
+    @GetMapping("/api/apartments/{id}/groceries")
     public List<GroceryItem> getGroceryListByApartmentId(
             @PathVariable int id
     ) {
