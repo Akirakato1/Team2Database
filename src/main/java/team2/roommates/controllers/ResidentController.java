@@ -53,10 +53,10 @@ public class ResidentController {
         return residentService.getResidentsByCalendarId(calendarId);
     }
 
-    @GetMapping("/api/groups/{groupId}/residents")
-    public List<Resident> getResidentsByGroupId(
-            @PathVariable int groupId
+    @GetMapping("/api/apartments/{apartmentId}/residents")
+    public List<Resident> getResidentsByApartmentId(
+            @PathVariable int apartmentId
     ) {
-        return residentService.getResidentsByGroupId(groupId);
+        return residentService.getResidentsByApartmentId(apartmentId);
     }
 }

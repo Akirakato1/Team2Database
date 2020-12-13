@@ -24,8 +24,8 @@ public class ChoreService {
         choreRepository.deleteById(choreId);
     }
 
-    public List<Chore> getChoresByGroupId(int groupId) {
-        return choreRepository.getChoresByGroupId(groupId);
+    public List<Chore> getChoresByApartmentId(int apartmentId) {
+        return choreRepository.getChoresByApartmentId(apartmentId);
     }
 
     public Chore getChoreById(int id) { return choreRepository.findById(id).get(); }

@@ -8,7 +8,7 @@ import team2.roommates.models.Chore;
 import java.util.List;
 
 public interface ChoreRepository extends CrudRepository<Chore, Integer> {
-    @Query(value = "SELECT * FROM chores where group_id=:groupId", nativeQuery = true)
-    List<Chore> getChoresByGroupId(
-            @Param("groupId") int groupId);
+    @Query(value = "SELECT * FROM chores where apartment_id=:apartmentId", nativeQuery = true)
+    List<Chore> getChoresByApartmentId(
+            @Param("apartmentId") int apartmentId);
 }

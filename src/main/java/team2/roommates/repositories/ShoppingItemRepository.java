@@ -8,7 +8,7 @@ import team2.roommates.models.ShoppingItem;
 import java.util.List;
 
 public interface ShoppingItemRepository extends CrudRepository<ShoppingItem, Integer> {
-    @Query(value = "SELECT * FROM shoppingItems where group_id=:groupId", nativeQuery = true)
-    List<ShoppingItem> getShoppingItemsByGroupId(
-            @Param("groupId") int groupId);
+    @Query(value = "SELECT * FROM shoppingItems where apartment_id=:apartmentId", nativeQuery = true)
+    List<ShoppingItem> getShoppingItemsByApartmentId(
+            @Param("apartmentId") int apartmentId);
 }

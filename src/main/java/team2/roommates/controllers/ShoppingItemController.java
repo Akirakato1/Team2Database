@@ -34,10 +34,10 @@ public class ShoppingItemController {
         shoppingItemService.deleteShoppingItem(shoppingItemId);
     }
 
-    @GetMapping("/api/groups/{groupId}/shoppingItems")
-    public List<ShoppingItem> getShoppingItemsByGroupId(
-            @PathVariable int groupId
+    @GetMapping("/api/apartments/{apartmentId}/shoppingItems")
+    public List<ShoppingItem> getShoppingItemsByApartmentId(
+            @PathVariable int apartmentId
     ) {
-        return shoppingItemService.getShoppingItemsByGroupId(groupId);
+        return shoppingItemService.getShoppingItemsByApartmentId(apartmentId);
     }
 }

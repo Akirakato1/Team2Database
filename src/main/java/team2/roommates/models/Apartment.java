@@ -4,15 +4,14 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "groups")
-public class Group {
+@Table(name = "apartments")
+public class Apartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String address;
-    private int calendarId;
 
-    public Group() {}
+    public Apartment() {}
 
     public int getId() {
         return id;
@@ -28,13 +27,5 @@ public class Group {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public int getCalendarId() {
-        return calendarId;
-    }
-
-    public void setCalendarId(int calendarId) {
-        this.calendarId = calendarId;
     }
 }

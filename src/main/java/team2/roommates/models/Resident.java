@@ -13,7 +13,7 @@ public class Resident {
     private String email;
     private int adminId;
     private int calendarId;
-    private int groupId;
+    private int apartmentId;
     
 
     public Resident(){}
@@ -66,11 +66,11 @@ public class Resident {
         this.calendarId = calendarId;
     }
 
-    public int getGroupId() {
-        return groupId;
+    public int getApartmentId() {
+        return apartmentId;
     }
 
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
+    public void setApartmentId(int apartmentId) {
+        this.apartmentId = apartmentId;
     }
 }

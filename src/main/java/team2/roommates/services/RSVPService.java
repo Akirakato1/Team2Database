@@ -3,11 +3,11 @@ package team2.roommates.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team2.roommates.models.Event;
-import team2.roommates.models.Group;
+import team2.roommates.models.Apartment;
 import team2.roommates.models.RSVP;
 import team2.roommates.models.RSVPId;
 import team2.roommates.repositories.EventRepository;
-import team2.roommates.repositories.GroupRepository;
+import team2.roommates.repositories.ApartmentRepository;
 import team2.roommates.repositories.RSVPRepository;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class RSVPService {
     @Autowired
     EventRepository eventRepository;
     @Autowired
-    GroupRepository groupRepository;
+    ApartmentRepository apartmentRepository;
     @Autowired
     RSVPRepository rsvpRepository;
 
@@ -45,11 +45,11 @@ public class RSVPService {
         }
     }
 
-    public List<Group> getApartmentsForEventId(int eventId) {
+    public List<Apartment> getApartmentsForEventId(int eventId) {
         List<RSVP> rsvps = rsvpRepository.getRSVPSByEventId(eventId);
-        List<Group> apartments = new ArrayList<>();
+        List<Apartment> apartments = new ArrayList<>();
         for (RSVP rsvp : rsvps) {
-            apartments.add(groupRepository.findById(rsvp.getApartmentId()).get());
+            apartments.add(apartmentRepository.findById(rsvp.getApartmentId()).get());
         }
         return apartments;
     }
