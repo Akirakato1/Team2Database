@@ -40,4 +40,16 @@ public class EventController {
         List<RSVP> rsvps = rsvpRepository.getRSVPSByEventId(userEventId);
         rsvpRepository.deleteAll(rsvps);
     }
+
+    @GetMapping("/api/events")
+    public List<Event> getAllEvents() {
+        return userEventService.getAllEvents();
+    }
+
+    @GetMapping("/api/events/{id}")
+    public Event getEventById(
+            @PathVariable int id
+    ) {
+        return userEventService.getEventById(id);
+    }
 }
