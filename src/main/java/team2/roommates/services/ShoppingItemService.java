@@ -24,7 +24,7 @@ public class ShoppingItemService {
         shoppingItemRepository.deleteById(shoppingItemId);
     }
 
-    public List<ShoppingItem> getShoppingItemsByGroupId(int groupId) {
-        return shoppingItemRepository.getShoppingItemsByGroupId(groupId);
+    public List<ShoppingItem> getShoppingItemsByApartmentId(int apartmentId) {
+        return shoppingItemRepository.getShoppingItemsByApartmentId(apartmentId);
     }
 }

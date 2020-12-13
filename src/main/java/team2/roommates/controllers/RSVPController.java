@@ -3,7 +3,7 @@ package team2.roommates.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team2.roommates.models.Event;
-import team2.roommates.models.Group;
+import team2.roommates.models.Apartment;
 import team2.roommates.models.RSVP;
 import team2.roommates.services.RSVPService;
 
@@ -31,7 +31,7 @@ public class RSVPController {
     }
 
     @GetMapping("/api/events/{id}/apartments")
-    public List<Group> getApartmentsForEventId(
+    public List<Apartment> getApartmentsForEventId(
             @PathVariable int id
     ) {
         return service.getApartmentsForEventId(id);

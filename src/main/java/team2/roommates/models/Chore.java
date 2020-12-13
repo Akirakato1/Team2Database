@@ -10,7 +10,7 @@ public class Chore {
     private int id;
     private String description;
     private String deadline;
-    private int groupId;	
+    private int apartmentId;	
 
     public Chore() {}
 
@@ -38,11 +38,11 @@ public class Chore {
         this.deadline = deadline;
     }
 
-    public Integer getGroupId() {
-        return groupId;
+    public Integer getApartmentId() {
+        return apartmentId;
     }
 
-    public void setGroupId(Integer groupId) {
-        this.groupId = groupId;
+    public void setApartmentId(Integer apartmentId) {
+        this.apartmentId = apartmentId;
     }
 }
