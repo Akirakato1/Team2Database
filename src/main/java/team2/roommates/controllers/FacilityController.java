@@ -46,4 +46,11 @@ public class FacilityController {
     {
         return facilityService.getAllFacilities();
     }
+
+    @GetMapping("/api/facilities/{id}")
+    public Facility getFacilityById(
+            @PathVariable int id
+    ) {
+        return facilityService.getFacilityById(id);
+    }
 }
