@@ -2,6 +2,8 @@ package team2.roommates.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import team2.roommates.models.Admin;
 import team2.roommates.models.Resident;
 import team2.roommates.services.ResidentService;
 
@@ -58,5 +60,12 @@ public class ResidentController {
             @PathVariable int apartmentId
     ) {
         return residentService.getResidentsByApartmentId(apartmentId);
+    }
+    
+    @GetMapping("/api/residents/{id}")
+    public Resident getResidentById(
+            @PathVariable int id
+    ) {
+        return residentService.getResidentById(id);
     }
 }

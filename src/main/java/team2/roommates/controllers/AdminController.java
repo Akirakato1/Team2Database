@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team2.roommates.models.Admin;
+import team2.roommates.models.Event;
 import team2.roommates.models.Resident;
 import team2.roommates.services.AdminService;
 
@@ -17,6 +18,13 @@ public class AdminController {
     @GetMapping("/api/admins")
     public List<Admin> findAllAdmins(){
     	return adminService.findAllAdmins();
+    }
+    
+    @GetMapping("/api/admins/{id}")
+    public Admin getAdminById(
+            @PathVariable int id
+    ) {
+        return adminService.getAdminById(id);
     }
     
     @PostMapping("/api/admins")
@@ -39,4 +47,5 @@ public class AdminController {
     ) {
         adminService.deleteAdmin(adminId);
     }
+    
 }
