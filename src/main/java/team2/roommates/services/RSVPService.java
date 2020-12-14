@@ -58,7 +58,7 @@ public class RSVPService {
         List<RSVP> rsvps = rsvpRepository.getRSVPSByApartmentId(apartmentId);
         List<Event> events = new ArrayList<>();
         for (RSVP rsvp : rsvps) {
-            events.add(eventRepository.findById(rsvp.getId()).get());
+            events.add(eventRepository.findById(rsvp.getEventId()).get());
         }
         return events;
     }
