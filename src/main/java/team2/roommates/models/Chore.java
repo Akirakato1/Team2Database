@@ -10,6 +10,7 @@ public class Chore {
     private int id;
     private String description;
     private String deadline;
+    private String asignee;
     private int apartmentId;	
 
     public Chore() {}
@@ -43,6 +44,18 @@ public class Chore {
     }
 
     public void setApartmentId(Integer apartmentId) {
+        this.apartmentId = apartmentId;
+    }
+
+    public String getAsignee() {
+        return asignee;
+    }
+
+    public void setAsignee(String asignee) {
+        this.asignee = asignee;
+    }
+
+    public void setApartmentId(int apartmentId) {
         this.apartmentId = apartmentId;
     }
 }
