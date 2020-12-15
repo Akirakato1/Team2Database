@@ -32,9 +32,7 @@ public class AccountService {
 	public Account findAccountByUsernamePassword(String username, String password) {
 		List<Account> al=accountRepository.findAccountByUsernamePassword(username,password);
 		if(al.size()==0) {
-			Account ret = new Account();
-			ret.setId(-1);
-			return ret;
+			return null;
 		}
 		else {
 			return al.get(0);
