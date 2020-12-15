@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import team2.roommates.models.Account;
 import team2.roommates.services.AccountService;
 
+import javax.servlet.http.HttpSession;
+
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders ="*")
 public class AccountController {
     @Autowired
     AccountService accountService;
@@ -20,9 +22,31 @@ public class AccountController {
     
     @GetMapping("/api/accounts/{username}/{password}")
     public Account findAccountByUsernamePassword(
-    		@PathVariable String username,
-    		@PathVariable String password){
+            @PathVariable String username,
+            @PathVariable String password,
+            HttpSession session){
+        session.setAttribute("username", username);
+        session.setAttribute("password", password);
     	return accountService.findAccountByUsernamePassword(username,password);
+    }
+
+    @GetMapping("/api/cookie")
+    public Account findAccountByCookie(
+            HttpSession session
+    ) {
+        if (session.getAttribute("username") == null) {
+            return new Account();
+        }
+        String username = (String) session.getAttribute("username");
+        String password = (String) session.getAttribute("password");
+        return accountService.findAccountByUsernamePassword(username,password);
+    }
+
+    @GetMapping("/api/logout")
+    public void logout(
+            HttpSession session
+    ) {
+        session.invalidate();
     }
     
     @PostMapping("/api/accounts")
