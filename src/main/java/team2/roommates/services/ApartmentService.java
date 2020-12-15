@@ -28,8 +28,7 @@ public class ApartmentService {
     public void deleteApartment(int apartmentId) {
         apartmentRepository.deleteById(apartmentId);
     }
-
-    public List<Apartment> getApartmentsByAdminId(int adminId) {
-        return apartmentRepository.getApartmentsByAdminId(adminId);
-    }
+	public List<Apartment> getApartmentsByAdminId(int id) {
+		return (List<Apartment>) apartmentRepository.getApartmentsByAdminId(id);
+	}
 }

@@ -39,4 +39,8 @@ public class ResidentService {
 	public List<Resident> findAllResidents() {
 		return (List<Resident>)residentRepository.findAll();
 	}
+
+	public Resident getResidentById(int id) {
+		return residentRepository.findById(id).get();
+	}
 }

@@ -28,4 +28,8 @@ public class AdminService {
 	public List<Admin> findAllAdmins() {
 		return (List<Admin>) adminRepository.findAll();
 	}
+
+	public Admin getAdminById(int id) {
+		return adminRepository.findById(id).get();
+	}
 }
