@@ -53,11 +53,12 @@ public class ApartmentController {
     {
         return apartmentService.getApartmentById(apartmentId);
     }
-
-    @GetMapping("/apu/admins/{adminId}/apartments")
+    
+    @GetMapping("/api/admins/{adminid}/apartments")
     public List<Apartment> getApartmentsByAdminId(
-            @PathVariable int adminId
-    ) {
-        return apartmentService.getApartmentsByAdminId(adminId);
+            @PathVariable int id
+    )
+    {
+        return apartmentService.getApartmentsByAdminId(id);
     }
 }

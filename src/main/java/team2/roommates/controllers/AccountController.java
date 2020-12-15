@@ -25,12 +25,10 @@ public class AccountController {
             @PathVariable String username,
             @PathVariable String password,
             HttpSession session){
-        Account ret = accountService.findAccountByUsernamePassword(username,password);
-        if (ret.getId() != -1) {
-            session.setAttribute("username", username);
-            session.setAttribute("password", password);
-        }
-    	return ret;    }
+        session.setAttribute("username", username);
+        session.setAttribute("password", password);
+    	return accountService.findAccountByUsernamePassword(username,password);
+    }
 
     @GetMapping("/api/cookie")
     public Account findAccountByCookie(
